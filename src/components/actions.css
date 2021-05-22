@@ -1,0 +1,177 @@
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+    #actions > *{
+        overflow: visible !important;
+    }
+    #actions{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: visible !important;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-areas: "menu actions main";
+        grid-template-columns: 62px auto 62px;
+        background-color: var(--color-1);
+        grid-gap: 0 !important;
+        padding: 0 8px;
+        justify-items: center;
+        border-top: 1px solid var(--color-4);
+    }
+    #actions > label.actionButton:not(:first-child) > div, #actions > * > label.actionButton > div{
+        background: none !important;
+    }
+    #actions > label.actionButton:not(:first-child) > div i, #actions > * > label.actionButton > div i{
+        font-size: 18px;
+    }
+    #actions > ol, #actions > ul{
+        grid-gap: 0 !important;
+        grid-template-rows: max-content !important;
+        grid-auto-flow: column !important;
+    }
+    #actions > label:first-child{
+        grid-area: main;
+        transform: translateY(-22px);
+    }
+    #actions > *:nth-child(2){
+        grid-area: menu;
+    }
+    #actions > *:not(:first-child):not(:nth-child(2)):not(:last-child){
+        grid-area: actions;
+        justify-content: center;
+    }
+    #actions > *:last-child{
+        display: none;
+    }
+    #actions label.actionButton div > span{
+        display: none;
+    }
+    .mobileSettings{
+        grid-auto-flow: row !important;
+        display: grid !important;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        border-radius: 8px;
+        box-shadow: 4px 0 32px rgba(0,0,0,0.16);
+        background-color: var(--color-4);
+    }
+}
+
+@media only screen and (min-width: 800px){
+    #actions{
+        background-color: var(--color-1);
+        padding: 32px 9px;
+        display: grid;
+        grid-auto-flow: row;
+        box-shadow: 4px 0 32px rgba(0,0,0,0.16);
+    }
+    #actions > *:last-child{
+        align-content: end;
+    }
+}
+
+@media only screen and (max-width: 1210px){
+    #actions{
+        grid-template-rows: max-content max-content max-content auto !important;
+    }
+}
+
+#actions{
+    display: grid;
+    grid-gap: 16px;
+    grid-area: actions;
+    grid-template-rows: max-content max-content auto;
+}
+
+#actions ol, #actions ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-auto-flow: row;
+    grid-gap: 16px;
+}
+
+#actions ol{
+    animation: buttons-slide .5s linear;
+}
+
+#actions ol > hr{
+    animation: buttons-fade 1s linear;
+}
+
+#action ul{
+    align-self: end;
+}
+
+#actions hr{
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 2px;
+    background-color: var(--color-5);
+}
+
+#actions > *:last-child{
+    align-self: end;
+}
+
+ul .actionButton div:not(:hover), ol .actionButton div:not(:hover){
+    background: var(--color-4) !important;
+}
+
+.actionButton i{
+    font-size: 32px;
+    color: var(--color-font);
+}
+
+.actionButton div{
+    width: 46px;
+    height: 46px;
+    display: block;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.actionButton span{
+    display: none;
+    background-color: var(--color-1);
+    border-radius: 8px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    position: absolute;
+    left: 46px;
+    transition: transform .5s;
+}
+
+.actionButton:hover span{
+    display: block;
+    transform: translateX(18px);
+}
+
+@keyframes buttons-slide{
+    from {
+        transform: translateX(-70px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttons-fade{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,689 @@
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+    #page{
+        width: 100% !important;
+        display: block !important;
+    }
+    #content{
+        width: 100% !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+    }
+    #content > div{
+        width: 100% !important;
+    }
+    .note{
+        margin: 0 !important;
+        padding-bottom: 46px !important;
+        width: calc( 100% - 2px ) !important;
+        border-radius: 0 !important;
+        min-height: 100vh;
+        display: grid !important;
+        align-content: start !important;
+    }
+    .note > *:not(:first-child){
+        margin-top: 16px !important;
+    }
+    .note > *:not(:last-child){
+        margin-bottom: 16px !important;
+    }
+    .note .image{
+        border-radius: 0 !important;
+    }
+    .note .error{
+        border-radius: 8px !important;
+        margin: 16px !important;
+    }
+    .note > pre:first-child:last-child{
+        position: absolute;
+        display: grid;
+        min-height: 15px;
+        align-items: center;
+        top: 40%;
+        bottom: 40%;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 1210px) {
+    main{
+        display: block !important;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .todoWindow{
+        width: 100%;
+    }
+}
+
+main{
+    background-color: var(--color-3);
+    overflow-y: auto;
+    display: grid;
+    grid-auto-flow: row;
+    align-items: flex-start;
+    grid-template-columns: 416px auto;
+    grid-template-rows: 100vh;
+    grid-template-areas: 'aside content';
+    color: var(--color-font);
+    position: relative;
+    grid-area: main;
+}
+
+#content{
+    grid-area: content;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.note > label:first-child{
+    margin: 0;
+}
+
+.emptyWindow{
+    display: grid;
+    grid-gap: 32px;
+    width: 550px;
+    margin: 110px;
+}
+
+.largeButton{
+    display: grid;
+    grid-gap: 36px;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: max-content auto;
+    grid-template-areas: 'button label';
+    font-size: 24px;
+    margin: 32px;
+}
+
+.largeButton.alternative{
+    grid-template-areas: 'label button';
+    grid-template-columns: auto max-content;
+}
+
+.largeButton div{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: var(--color-1);
+    grid-area: button;
+    font-size: 64px;
+}
+
+.largeButton img{
+    height: 60px;
+}
+
+.largeButton span{
+    grid-area: label;
+}
+
+.note{
+    display: block;
+    background-color: var(--color-2);
+    border-radius: 8px;
+    width: 660px;
+    margin: 110px 32px;
+    padding: 1px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.32);
+    position: relative;
+}
+
+.note > *:not(.image){
+    margin: 32px;
+}
+
+
+.imageTest{
+    margin: 0 0 16px 0 !important;
+    position: relative;
+    display: grid;
+    overflow-y: hidden;
+    align-content: center;
+    justify-items: center;
+    transition: height .4s;
+}
+.imageTest.resize{
+    height: 192px;
+}
+.imageTest img{
+    width: 100%;
+}
+
+.note .image{
+    display: block;
+    height: 192px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.32);
+    transition: height .4s;
+    position: relative
+}
+
+.note .image:hover .expand{
+    opacity: 1;
+}
+
+.note .image .expand{
+    background-color: var(--color-1);
+    color: var(--color-font);
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 28px;
+    border-radius: 50%;
+    height: 28px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    opacity: 0.2;
+    user-select: none;
+    transition: opacity .2s;
+}
+
+.note .image .expand i{
+    transition: transform .2s;
+}
+
+.note .image .expand span{
+    background-color: var(--color-1);
+    border-radius: 8px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    position: absolute;
+    right: 36px;
+    font-weight: lighter;
+    opacity: 0;
+    transition: opacity .2s;
+    visibility: hidden;
+}
+
+.note .image .expand:hover span{
+    visibility: visible;
+    opacity: 0.6;
+}
+
+.note .image:first-child:last-child{
+    height: initial;
+    border-radius: 8px;
+}
+
+.note .image img{
+    display: block;
+    width: 100%;
+}
+
+.note h1, .note h2{
+    padding: 0;
+    margin: 0;
+}
+
+.note h1{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.note h2{
+    font-size: 18px;
+    font-weight: 400;
+    white-space: pre-line;
+}
+
+.note:not(form) h2{
+    overflow-x: hidden;
+}
+
+.note ul{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 14px;
+}
+
+.note li{
+    background-color: var(--color-1);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 14px;
+    color: var(--color-font-unactive);
+    cursor: pointer;
+    border-radius: 8px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 14px;
+    grid-template-columns: max-content auto;
+    align-items: center;
+}
+
+.note li:hover{
+    color: var(--color-font)
+}
+
+.note .checkbox{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid var(--color-font-unactive);
+}
+
+.note li:hover .checkbox{
+    border-color: var(--color-font)
+}
+
+.listElementCheckbox li .checkbox.checked, .listElementCheckbox input[type='checkbox']:checked ~ li .checkbox{
+    background-color: var(--color-font-unactive);
+    border: none;
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+
+.listElementCheckbox li .checkbox.checked::after, .listElementCheckbox input[type='checkbox']:checked ~ li .checkbox::after{
+    font-family: fontello;
+    content: '\E801';
+    line-height: 12px;
+    text-align: center;
+    font-size: 12px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--color-1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    width: 12px;
+    margin: 4px;
+}
+
+.listElementCheckbox li:hover .checkbox.checked, .listElementCheckbox input[type='checkbox']:checked ~ li:hover .checkbox{
+    background-color: var(--color-font);
+}
+
+form.note .image{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border: 1px dashed transparent;
+    position: relative;
+}
+
+form.note .image > div{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto max-content;
+    grid-template-rows: 50px;
+    position: absolute;
+    left: 32px;
+    bottom: 16px;
+    right: 32px;
+    grid-gap: 16px;
+}
+
+form.note .image:hover{
+    border-color: var(--color-font);
+}
+
+
+form.note .image .input, form.note .image .upload{
+    color: var(--color-1);
+    background-color: var(--color-font-unactive);
+    box-shadow: 4px 4px 16px var(--color-5);
+}
+
+form.note .image .input{
+    outline: none;
+    border: none;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    padding: 0;
+    overflow-x: hidden;
+    padding: 16px 32px;
+}
+
+form.note .image .input::-webkit-scrollbar{
+    width: 0px;
+}
+
+form.note .image img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+}
+
+form.note .image .upload{
+    padding: 0 32px;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    border-radius: 8px;
+}
+
+form.note .image .input:hover, form.note .image .input:focus, form.note .image .upload:hover{
+    color: var(--color-1);
+    text-decoration: underline;
+}
+
+form.note .image .upload > input[type='file']{
+    display: none;
+}
+
+form.note label > h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+form.note > label{
+    display: grid;
+    position: relative;
+}
+
+form.note .input{
+    background-color: var(--color-1);
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    padding: 10px 14px;
+    color: var(--color-font-unactive);
+    cursor: text;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+    resize: none;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+    overflow-y: auto !important;
+}
+
+form.note .input:not(.resize){
+    overflow-y: hidden;
+}
+
+form.note .input.resize{
+    resize: vertical;
+    min-height: 60px;
+}
+
+form.note .input:hover, form.note .input:focus{
+    color: var(--color-font);
+    border-color: var(--color-font);
+}
+
+form.note .listElement{
+    cursor: default;
+    grid-gap: 10px;
+}
+
+form.note .error{
+    background-color: #B00020;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    display: block;
+    color: #fff;
+    margin: 0;
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+}
+
+.note > div{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto;
+    grid-gap: 16px;
+}
+
+.note .element{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto max-content;
+    grid-gap: 16px;
+}
+
+.note footer{
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    justify-content: end;
+    grid-gap: 16px;
+}
+
+label.button{
+    background-color: var(--color-1);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 18px;
+    color: var(--color-font-unactive);
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    grid-auto-flow: column;
+    grid-gap: 14px;
+    grid-template-columns: max-content auto;
+    align-items: center;
+    position: abs;
+}
+
+.listElement .button{
+    background-color: var(--color-1);
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    padding: 10px;
+    color: var(--color-font-unactive);
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid transparent;
+    resize: none;
+    user-select: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+.listElement .button:hover{
+    color: var(--color-font);
+    border-color: var(--color-font);
+}
+
+.contextMenu{
+    position: absolute;
+    cursor: default;
+    top: 20px;
+    left: 0;
+    background-color: var(--color-2);
+    padding: 8px 0;
+    display: grid;
+    grid-auto-flow: row;
+    z-index: 2;
+    border-radius: 8px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.32);
+}
+
+.contextMenu li{
+    cursor: pointer;
+    display: grid;
+    text-align: left;
+    background-color: transparent;
+    border-radius: 0;
+    color: var(--color-font-unactive);
+    grid-template-columns: 24px minmax(120px, auto);
+}
+
+.contextMenu li:hover{
+    background-color: var(--color-4);
+    color: var(--color-font);
+}
+
+form.note .buttons .button:hover, form.note .buttons .button:focus{
+    color: var(--color-font);
+    border-color: var(--color-font);
+}
+
+#settings{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: minmax(auto, 660px);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    
+    padding: 16px 8px;
+}
+
+#settings h1, #settings h2{
+    margin: 0;
+    padding: 0;
+}
+
+#settings section{
+    background-color: var(--color-2);
+    color: var(--color-font);
+    display: grid;
+    border-radius: 8px;
+    padding: 1px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.32);
+}
+
+#settings section .background{
+    height: 194px;
+    position: relative;
+    background: linear-gradient(135deg, #2F80ED 0%, #2D9CDB 50.28%, #56CCF2 100%);
+    border-radius: 8px 8px 0 0;
+}
+
+#settings section .background h1{
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    font-size: 50px;
+    line-height: 36px;
+}
+
+#settings section h1{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#settings section h2{
+    font-size: 18px;
+    font-weight: 400;
+    white-space: pre-line;
+}
+
+#settings section ol{
+    display: grid;
+    grid-auto-flow: column;
+    padding: 16px 0;
+    grid-gap: 14px;
+    grid-auto-columns: max-content;
+    user-select: none;
+}
+
+#settings section .button{
+    background-color: var(--color-1);
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-font-unactive);
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    grid-auto-flow: column;
+    grid-gap: 14px;
+    grid-template-columns: max-content auto;
+    align-items: center;
+    position: abs;
+    padding: 10px 18px;
+}
+
+#settings section .button:hover{
+    color: var(--color-font);
+    opacity: 1;
+}
+
+#settings section .background .button.float{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.7;
+}
+
+#settings section > ul{
+    display: grid;
+    grid-gap: 32px;
+    padding: 32px;
+    list-style: none;
+}
+
+#settings label > input[type='radio'], #settings label > input[type='button'], #settings label > input[type='file']{
+    display: none;
+}
+
+#settings .button > input[type='radio']:checked ~ span{
+    position: relative;
+}
+
+#settings .button > input[type='radio']:checked ~ span::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: '';
+    border: 2px solid var(--color-special);
+    border-radius: 8px;
+    margin: -10px -18px;
+}
+
+#settings .disabled{
+    opacity: 0.5;
+}
+
+#settings label > input:disabled ~ .button{
+    cursor: not-allowed;
+}

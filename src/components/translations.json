@@ -1,0 +1,132 @@
+{
+	"pl": {
+		"note_list": "Moje notatki",
+		"create": "Utwórz nową notatkę",
+		"try": "Użyj danych przykładowych",
+		"actions": {
+			"create": "Utwórz nową notatkę",
+			"modify": "Edytuj",
+			"preview": "Podgląd",
+			"show": "Pokaż liste notatek",
+			"hide": "Ukryj liste notetek",
+			"check": "Oznacz wszystkie elementy jako oznaczone",
+			"uncheck": "Oznacz wszystkie elementy jako nieoznaczone",
+			"remove": "Usuń wybraną notatke",
+			"settings": "Ustawienia"
+		},
+		"note": {
+			"finished": "Ukończone",
+			"checked": "Odznaczone",
+			"fill": "Wypełnij",
+			"shrink": "Dopasuj",
+			"upload": "Dodaj plik",
+			"url": "Link do zdjęcia",
+			"title": "Tytuł",
+			"description": "Opis",
+			"create": "Utwórz liste",
+			"add": "Utwórz nowy element listy",
+			"text": "Tekst",
+			"remove": "Usuń",
+			"up": "Przenieś wyżej",
+			"down": "Przenieś niżej",
+			"empty": "Notatka jest pusta",
+			"done": "Wszystkie zadania z listy zostały ukończone!"
+		},
+		"settings": {
+			"title": "Ustawienia",
+			"theme": {
+				"title": "Motyw",
+				"description": "Wybierz motyw aplikacji",
+				"default": "domyślny",
+				"light": "jasny"
+			},
+			"language": {
+				"title": "Język",
+				"description": "Wybierz język aplikacji",
+				"english": "Angielski",
+				"polish": "Polski"
+			},
+			"data": {
+				"title": "Importuj / eksportuj",
+				"description": "importuj lub eksportuj istniejące dane",
+				"import": "importuj",
+				"export": "eksportuj"
+			},
+			"mockup": {
+				"title": "Dane przykładowe",
+				"description": "załaduj przykładowe notatki",
+				"load": "załaduj"
+			},
+			"remove": {
+				"title": "Usuń wszystkie dane",
+				"description": "Wyczyść dane lokalne",
+				"wipe": "wyczyść dane"
+			}
+		}
+	},
+	"en": {
+		"note_list": "My notebook",
+		"create": "Create new note",
+		"try": "Use mockup data",
+		"actions": {
+			"create": "Create new note",
+			"modify": "Modify",
+			"preview": "Preview",
+			"show": "Show menu",
+			"hide": "Hide menu",
+			"check": "Mark elements as checked",
+			"uncheck": "Mark elements as unchecked",
+			"remove": "Remove selected note",
+			"settings": "Settings"
+		},
+		"note": {
+			"finished": "Finished",
+			"checked": "Checked",
+			"fill": "Fill",
+			"shrink": "Shrink",
+			"upload": "Upload file",
+			"url": "url",
+			"title": "Title",
+			"description": "Description",
+			"create": "Create list",
+			"add": "Create new list element",
+			"text": "Text",
+			"remove": "Delete",
+			"up": "Move up",
+			"down": "Move down",
+			"empty": "Note is empty",
+			"done": "All tasks from the list have been completed!"
+		},
+		"settings": {
+			"title": "Settings",
+			"theme": {
+				"title": "Themes",
+				"description": "choose app theme colors",
+				"default": "default",
+				"light": "light"
+			},
+			"language": {
+				"title": "Language",
+				"description": "Choose app language",
+				"english": "English",
+				"polish": "Polish"
+			},
+			"data": {
+				"title": "Import / export",
+				"description": "import or export existing notes",
+				"import": "import",
+				"export": "export"
+			},
+			"mockup": {
+				"title": "Mockup data",
+				"description": "Replace existing data witch sample notes",
+				"load": "load mockup"
+			},
+			"remove": {
+				"title": "Remove all data",
+				"description": "clear local data storage",
+				"wipe": "wipe data"
+			}
+		}
+	}
+}

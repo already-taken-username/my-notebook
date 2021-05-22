@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --color-1: #000;
+    --color-2: #131313;
+    --color-3: #202020;
+    --color-4: #2E2E2E;
+    --color-5: rgba(255,255,255,0.12);
+    --color-font: #fff;
+    --color-font-unactive: rgba(255, 255, 255, 0.7);
+    --color-special: #00F0FF;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#page{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-auto-flow: column dense;
+    grid-template-areas: 'actions main';
+    grid-auto-columns: max-content auto;
+}
+
+.separator{
+    color: var(--color-5);
+    font-style: italic;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: max-content auto;
+    grid-gap: 16px;
+    align-items: center;
+    user-select: none;
+}
+
+.separator.large{
+    grid-template-columns: auto max-content auto;
+}
+
+.separator hr{
+    display: block;
+    height: 1px;
+    background-color: var(--color-5);
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+pre{
+    color: var(--color-font);
+    white-space: normal;
+    text-align: center;
+    background-color: rgba( 0, 0, 0, 0.32 );
+    padding: 25px;
+    margin: 0;
+    border-radius: 8px;
+}
+
+a{
+    text-decoration: underline;
+    color: var(--color-font);
+    cursor: pointer;
+}
+
+label > div{
+    cursor: pointer;
+}
+
+label > input[type='button'], label > input[type='checkbox']{
+    display: none;
+}
